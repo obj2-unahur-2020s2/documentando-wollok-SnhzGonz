@@ -5,10 +5,10 @@ class Hogar {
 
 	// Se considera que un hogar _es bueno_ 
 	// si su nivel de mugre es la mitad del confort que ofrece, o menos. 
-	method esBueno() = nivelMugre <= confort / 2
+	method esBueno() = nivelMugre <= confort / 2 ## devuelve booleano
 
 	method fueAtacado(plaga) {
-		nivelMugre += plaga.nivelDanio()
+		nivelMugre += plaga.nivelDanio() ## no devuelve nada, aumenta el valor de la variable nivelMugre
 	}
 
 }
@@ -19,11 +19,11 @@ class Mascota {
 
 	method fueAtacado(plaga) {
 		if (plaga.transmiteEnfermedad()) {
-			nivelSalud -= plaga.nivelDanio()
-		}
-	}
+			nivelSalud -= plaga.nivelDanio() ## no devuelve nada, reduce el valor de la variable nivelMugre
+		} 
+	} 
 
-	method esBueno() = nivelSalud > 250
+	method esBueno() = nivelSalud > 250 ## devuelve booleano
 
 }
 
@@ -32,13 +32,13 @@ class Huerta {
 	var property capacidadProduccion
 
 	method esBueno() {
-		return capacidadProduccion > INTA.produccionMinima()
+		return capacidadProduccion > INTA.produccionMinima() ## devuelve booleano
 	}
 
 	method fueAtacado(plaga) {
 		capacidadProduccion -= plaga.nivelDanio() * 0.1
 		if (plaga.transmiteEnfermedad()) {
-			capacidadProduccion -= 10
+			capacidadProduccion -= 10 ## no devuelve nada, reduce el valor de la variable capacidadProduccion
 		}
 	}
 

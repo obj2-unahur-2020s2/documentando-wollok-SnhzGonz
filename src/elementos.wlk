@@ -1,7 +1,7 @@
 class Hogar {
 
-	var property nivelMugre
-	var property confort
+	var property nivelMugre ## integer
+	var property confort ## integer 
 
 	// Se considera que un hogar _es bueno_ 
 	// si su nivel de mugre es la mitad del confort que ofrece, o menos. 
@@ -29,7 +29,7 @@ class Mascota {
 
 class Huerta {
 
-	var property capacidadProduccion
+	var property capacidadProduccion ## integer
 
 	method esBueno() {
 		return capacidadProduccion > INTA.produccionMinima() ## devuelve booleano
